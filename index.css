@@ -9,7 +9,7 @@
     margin: 10px;
 }
 
-#check-answer {
+#check-answer, #next-question {
     width: 100px;
     height: 50px;
     float: right;
