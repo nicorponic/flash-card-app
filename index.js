@@ -53,19 +53,13 @@ let i = 0;
 const button = document.getElementById("check-answer");
 const paragraph = document.createElement("p");
 const container = document.getElementById("question-answer");
-//button.onclick(flip);
 
 const dropdown = document.getElementById("categoryList");
 let selectedCategory = dropdown.options[dropdown.selectedIndex].value;
- 
+
 function changeCategory() {
-
-    selectedCategory = dropdown.options[dropdown.selectedIndex].value;
-    
-
+  selectedCategory = dropdown.options[dropdown.selectedIndex].value;
 }
-//const changeCategory = selectedCategory
-//selectedCategory.onchange = dropdown.options[dropdown.selectedIndex].value;
 
 function flip() {
   paragraph.innerText = data[selectedCategory].questions[i].answer;
@@ -73,29 +67,26 @@ function flip() {
 
 function randomizer() {
   const currentQuestion = i;
-  let randomizer = Math.floor(Math.random() * data[selectedCategory].questions.length);
+  let randomizer = Math.floor(
+    Math.random() * data[selectedCategory].questions.length
+  );
 
   while (randomizer === currentQuestion) {
-    randomizer = Math.floor(Math.random() * data[selectedCategory].questions.length);
+    randomizer = Math.floor(
+      Math.random() * data[selectedCategory].questions.length
+    );
   }
 
   i = randomizer;
 }
 
-
 function nextQuestion() {
   randomizer();
-
-  //let randomize = Math.floor(Math.random() * 2 Math.floor(i))
-  //i++;
   paragraph.innerText = data[selectedCategory].questions[i].question;
 }
 
 function displayQuestion() {
-  //randomizer();
-  const currentQuestion = data[selectedCategory].questions[i]; 
+  const currentQuestion = data[selectedCategory].questions[i];
   paragraph.innerText = currentQuestion.question;
   container.appendChild(paragraph);
 }
-
-
